@@ -20,7 +20,7 @@
 			Cv2.CvtColor (image, grayMat, ColorConversionCodes.BGR2GRAY); 
 
 			Mat thresh = new Mat ();
-			Cv2.Threshold (grayMat, thresh, 127, 255, ThresholdTypes.BinaryInv);
+			Cv2.Threshold (grayMat, thresh, 254, 255, ThresholdTypes.BinaryInv);
 
 
 			// Extract Contours
@@ -28,14 +28,18 @@
 			HierarchyIndex[] hierarchy;
 			Cv2.FindContours (thresh, out contours, out hierarchy, RetrievalModes.Tree, ContourApproximationModes.ApproxNone, null);
 
+            Debug.Log(contours[0].Length);
+            Debug.Log(contours.Length);
+
 			foreach (Point[] contour in contours) {
 				double length = Cv2.ArcLength(contour, true);
 				Point[] approx = Cv2.ApproxPolyDP(contour, length * 0.01, true);
-				string shapeName = null;
+				string shapeName = "cube";
 				Scalar color = new Scalar();
+                color = new Scalar(0, 255, 255);
 
-
-				if (approx.Length == 3) {
+                /*
+                if (approx.Length == 3) {
 					shapeName = "Triangle";
 					color = new Scalar(0,255,0);
 				}
@@ -57,6 +61,7 @@
 					shapeName = "Circle";
 					color = new Scalar(0, 255, 255);
 				}
+                */
 
 				if (shapeName != null) {
 					Moments m = Cv2.Moments(contour);

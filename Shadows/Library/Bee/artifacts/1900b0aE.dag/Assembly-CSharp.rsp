@@ -762,7 +762,6 @@
 "Assets/OpenCV+Unity/Demo/Scripts/WebCamera.cs"
 "Assets/OpenCV+Unity/Demo/Tracking/TrackingScript.cs"
 "Assets/Scripts/ImageProcessing.cs"
-"Assets/Scripts/RunPythonFile.cs"
 "Assets/Scripts/TakeScreenshot.cs"
 -langversion:9.0
 /unsafe+

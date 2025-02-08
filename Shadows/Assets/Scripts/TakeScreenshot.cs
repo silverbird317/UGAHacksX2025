@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class TakeScreenshot : MonoBehaviour
 {
@@ -38,6 +39,12 @@ public class TakeScreenshot : MonoBehaviour
             byte[] bytes = screenShot.EncodeToPNG();
             string filename = ScreenShotName(resWidth, resHeight);
             System.IO.File.WriteAllBytes(filename, bytes);
+
+            // make readable
+            FileInfo fInfo = new FileInfo(filename);
+            // Set the IsReadOnly property.
+            fInfo.IsReadOnly = false;
+
             Debug.Log(string.Format("Took screenshot to: {0}", filename));
             takeHiResShot = false;
         }
