@@ -5,7 +5,7 @@ namespace ImageProcessing
     using OpenCvSharp;
     using UnityEngine.UI;
 
-    public class ImageProcessing : MonoBehaviour
+    public class ImageProcessor : MonoBehaviour
     {
         private bool slice = false;
 
@@ -56,9 +56,6 @@ namespace ImageProcessing
                             end = contours[i].Length - 1;
                         } // if
                         simplify_contours[i][j] = contours[i][end];
-                        Debug.Log(i + ": " + simplify_contours[0][j]);
-                        Debug.Log(simplify_contours[1][j]);
-                        Debug.Log(simplify_contours[2][j]);
                     } // for
                 } // for
 
@@ -96,6 +93,8 @@ namespace ImageProcessing
                 rawImage.texture = texture;
 
                 slice = false;
+
+
             } // if
 
         } // LateUpdate
