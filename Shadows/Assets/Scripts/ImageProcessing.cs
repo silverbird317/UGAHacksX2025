@@ -4,6 +4,8 @@ namespace ImageProcessing
     using System.Collections;
     using OpenCvSharp;
     using UnityEngine.UI;
+    using System;
+    using System.IO;
 
     public class ImageProcessor : MonoBehaviour
     {
@@ -94,7 +96,35 @@ namespace ImageProcessing
 
                 slice = false;
 
-
+                // export collider points to txt file
+                Debug.Log("Exporting contour coordinates to txt file");
+                // Set a variable to the Documents path.
+                
+                try
+                {
+                    //Pass the filepath and filename to the StreamWriter Constructor
+                    StreamWriter sw = new StreamWriter("Assets/Contours/Contours.txt");
+                    //Write a line of text
+                    for (int i = 0; i < simplify_contours.Length; i++)
+                    {
+                        sw.WriteLine("New Collider");
+                        for (int j = 0; j < simplify_contours[i].Length; j++)
+                        {
+                            Debug.Log(simplify_contours[i][j]);
+                            sw.WriteLine(simplify_contours[i][j]);
+                        } // for
+                    } // for
+                    //Close the file
+                    sw.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("Executing finally block.");
+                }
             } // if
 
         } // LateUpdate
