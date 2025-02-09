@@ -26,5 +26,5 @@ People really like putting a big price tag on code integrations.
 Coming up with a good title.
 
 ## Team Members
-Anna Hu, Ella Ma
+Anna Hu, Ella Ma (the tae30823 is also Ella)
 
