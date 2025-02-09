@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shadow2DScene.unity
     guid: ea567cec7e298e84eb54f10339c3fe7f
+  - enabled: 1
+    path: Assets/Scenes/Levels.unity
+    guid: a45ef957825321a408bd0027a30df6a4
   m_configObjects: {}

@@ -28,7 +28,7 @@ namespace ImageProcessing
             Cv2.CvtColor(image, grayMat, ColorConversionCodes.BGR2GRAY);
 
             Mat thresh = new Mat();
-            Cv2.Threshold(grayMat, thresh, 254, 255, ThresholdTypes.BinaryInv);
+            Cv2.Threshold(grayMat, thresh, 127, 255, ThresholdTypes.BinaryInv);
 
 
             // Extract Contours

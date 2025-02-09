@@ -9,7 +9,16 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
+    public void MainMenuPage() {
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
     public void QuitGame() {
         Application.Quit();
     }
+
+    public void LevelsPage() {
+        SceneManager.LoadScene("Levels");
+    }
+
 }

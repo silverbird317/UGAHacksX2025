@@ -763,9 +763,15 @@
 "Assets/OpenCV+Unity/Demo/Tracking/TrackingScript.cs"
 "Assets/Scenes/MainMenuScript.cs"
 "Assets/Scripts/ChangeShader.cs"
+"Assets/Scripts/DragObject.cs"
 "Assets/Scripts/GenerateColliders.cs"
 "Assets/Scripts/ImageProcessing.cs"
+"Assets/Scripts/Move3D.cs"
+"Assets/Scripts/NextLevel.cs"
+"Assets/Scripts/OutOfBounds.cs"
+"Assets/Scripts/RespawnPlayer.cs"
 "Assets/Scripts/SwitchCamera.cs"
+"Assets/Scripts/SwitchToScene.cs"
 "Assets/Scripts/TakeScreenshot.cs"
 -langversion:9.0
 /unsafe+

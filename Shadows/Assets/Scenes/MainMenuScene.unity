@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 910950295}
   - component: {fileID: 910950298}
   m_Layer: 5
-  m_Name: Menu Button
+  m_Name: Levels Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1379,7 +1379,7 @@ GameObject:
   - component: {fileID: 1945205783}
   - component: {fileID: 1945205782}
   m_Layer: 5
-  m_Name: Menu Button text
+  m_Name: Levels Button text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,7 +1424,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: menu
+  m_text: levels
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 749175664a5f3334d939b44c67d09e34, type: 2}
   m_sharedMaterial: {fileID: 2814009784236864664, guid: 749175664a5f3334d939b44c67d09e34, type: 2}
