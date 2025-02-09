@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 224530399}
   - component: {fileID: 224530398}
   m_Layer: 0
-  m_Name: MoveObjectsCamera
+  m_Name: 3D Room Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2223,7 +2223,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   m_Layer: 0
-  m_Name: ShadowCamera
+  m_Name: 2D Shadow Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2467,7 +2467,7 @@ GameObject:
   - component: {fileID: 1008197813}
   - component: {fileID: 1008197812}
   m_Layer: 5
-  m_Name: ShadowCanvas
+  m_Name: 2D Shadow UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3932,7 +3932,7 @@ GameObject:
   - component: {fileID: 1770761955}
   - component: {fileID: 1770761954}
   m_Layer: 5
-  m_Name: MoveObjectsCanvas
+  m_Name: 3D Room UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
