@@ -45,7 +45,9 @@ public class SwitchToScene : MonoBehaviour
         } else if (sceneName.Equals("TutorialLevelTwo")) {
             SceneManager.LoadScene("MainScene");
         }  else if (sceneName.Equals("MainScene")) {
-            SceneManager.LoadScene("MainMenuScene");
+            SceneManager.LoadScene("MainSceneTwo");
+        }  else if (sceneName.Equals("MainSceneTwo")) {
+            SceneManager.LoadScene("MainSceneThree");
         } 
     }
 }
