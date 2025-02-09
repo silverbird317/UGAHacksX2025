@@ -771,6 +771,7 @@
 "Assets/Scripts/NextLevel.cs"
 "Assets/Scripts/OutOfBounds.cs"
 "Assets/Scripts/RespawnPlayer.cs"
+"Assets/Scripts/ShowHideLevelsMenu.cs"
 "Assets/Scripts/SwitchCamera.cs"
 "Assets/Scripts/SwitchToScene.cs"
 "Assets/Scripts/TakeScreenshot.cs"
