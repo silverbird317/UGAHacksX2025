@@ -118,6 +118,10 @@ namespace ImageProcessing
                 } // for
                   //Close the file
                 sw.Close();
+
+                StreamWriter sw2 = new StreamWriter("Assets/Contours/RetrySceneName.txt", false);
+                sw2.WriteLine(SceneManager.GetActiveScene().name);
+                sw2.Close();
             }
             catch (Exception e)
             {
