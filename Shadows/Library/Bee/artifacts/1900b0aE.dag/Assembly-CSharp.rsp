@@ -762,6 +762,7 @@
 "Assets/OpenCV+Unity/Demo/Scripts/WebCamera.cs"
 "Assets/OpenCV+Unity/Demo/Tracking/TrackingScript.cs"
 "Assets/Scenes/MainMenuScript.cs"
+"Assets/Scripts/AudioFadeOut.cs"
 "Assets/Scripts/ChangeShader.cs"
 "Assets/Scripts/DragObject.cs"
 "Assets/Scripts/GenerateColliders.cs"
