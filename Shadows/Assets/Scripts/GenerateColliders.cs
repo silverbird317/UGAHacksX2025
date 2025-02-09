@@ -9,6 +9,9 @@ public class GenerateColliders : MonoBehaviour
 {
     List<List<Vector2>> colliderData = new List<List<Vector2>>();
     string colliderDataPath = "Assets/Contours/Contours.txt";
+    string filenamePath = "Assets/Contours/Filename.txt";
+
+    [SerializeField] GameObject showShadowImage;
 
     List<GameObject> objs;
     // Start is called before the first frame update
@@ -38,7 +41,7 @@ public class GenerateColliders : MonoBehaviour
             } // while
             colliderData.Add(tempPointsList);
 
-            Debug.Log(rowCount);
+            Debug.Log("rowCount: " + rowCount);
 
             // Create GameObjects
             for (int i = 0; i <= rowCount; i++) {
@@ -50,7 +53,7 @@ public class GenerateColliders : MonoBehaviour
                 //obj.GetComponent<SpriteRenderer>().sortingOrder = 0;
                 obj.GetComponent<PolygonCollider2D>().points = colliderData[i].ToArray();
                 objs.Add(obj);
-            } //
+            } // for
         } // using
 
         //spawn object
@@ -62,6 +65,31 @@ public class GenerateColliders : MonoBehaviour
         obj.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("collider");
         obj.GetComponent<PolygonCollider2D>().points = colliderData[0].ToArray();
         */
+
+
+        // get filename from txt file
+        string filepath = "";
+        using (StreamReader read = new StreamReader(filenamePath))
+        {
+            string line;
+            while ((line = read.ReadLine()) != null)
+            {
+                filepath = line;
+            } // while
+
+        } // using
+        // C:/Users/Gaga/Documents/GitHub/UGAHacksX2025/Shadows/Assets/Resources/Screenshots/screen_1920x1080_2025-02-08_21-45-35.png
+        Texture2D texture = new Texture2D(1, 1);
+        byte[] imageBytes = File.ReadAllBytes(filepath);
+        texture.LoadImage(imageBytes);
+
+        // Create a new Sprite from the texture
+        Sprite newSprite = Sprite.Create(texture, new UnityEngine.Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+
+        // Assign the new Sprite to the Sprite 
+        showShadowImage.GetComponent<SpriteRenderer>().sprite = newSprite;
+
+        //showShadowImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("screen_1920x1080_2025-02-08_21-35-52");
     } // Start
 
     // Update is called once per frame

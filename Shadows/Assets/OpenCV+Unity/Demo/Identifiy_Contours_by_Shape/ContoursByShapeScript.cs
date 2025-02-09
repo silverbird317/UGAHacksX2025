@@ -28,9 +28,6 @@
 			HierarchyIndex[] hierarchy;
 			Cv2.FindContours (thresh, out contours, out hierarchy, RetrievalModes.Tree, ContourApproximationModes.ApproxNone, null);
 
-            Debug.Log(contours[0].Length);
-            Debug.Log(contours.Length);
-
 			foreach (Point[] contour in contours) {
 				double length = Cv2.ArcLength(contour, true);
 				Point[] approx = Cv2.ApproxPolyDP(contour, length * 0.01, true);

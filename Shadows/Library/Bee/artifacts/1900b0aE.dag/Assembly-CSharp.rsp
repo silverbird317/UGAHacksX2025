@@ -761,8 +761,10 @@
 "Assets/OpenCV+Unity/Demo/Scripts/FaceProcessor.cs"
 "Assets/OpenCV+Unity/Demo/Scripts/WebCamera.cs"
 "Assets/OpenCV+Unity/Demo/Tracking/TrackingScript.cs"
+"Assets/Scripts/ChangeShader.cs"
 "Assets/Scripts/GenerateColliders.cs"
 "Assets/Scripts/ImageProcessing.cs"
+"Assets/Scripts/SwitchCamera.cs"
 "Assets/Scripts/TakeScreenshot.cs"
 -langversion:9.0
 /unsafe+

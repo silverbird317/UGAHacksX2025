@@ -8,11 +8,12 @@ public class TakeScreenshot : MonoBehaviour
 {
     [SerializeField] GameObject processorContainer;
     ImageProcessing.ImageProcessor processor;
+    [SerializeField] GameObject canvas;
 
     public int resWidth = 2550;
     public int resHeight = 3300;
 
-    private bool takeHiResShot = false;
+    //private bool takeHiResShot = false;
 
     private void Awake()
     {
@@ -27,96 +28,73 @@ public class TakeScreenshot : MonoBehaviour
                              System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
     }
 
-    public void TakeHiResShot()
+    /*public void TakeHiResShot()
     {
         takeHiResShot = true;
-    }
+    }*/
 
-    void LateUpdate()
+    public void SaveScreenshot()
     {
-        takeHiResShot |= Input.GetKeyDown("k");
-        if (takeHiResShot)
+        //takeHiResShot |= Input.GetKeyDown("k");
+        //if (takeHiResShot) {
+        // hide canvas before screenshot
+        canvas.SetActive(false);
+
+        RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
+        GetComponent<Camera>().targetTexture = rt;
+        Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false);
+        GetComponent<Camera>().Render();
+        RenderTexture.active = rt;
+        screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
+        GetComponent<Camera>().targetTexture = null;
+        RenderTexture.active = null; // JC: added to avoid errors
+        Destroy(rt);
+        byte[] bytes = screenShot.EncodeToPNG();
+        string filename = ScreenShotName(resWidth, resHeight);
+        System.IO.File.WriteAllBytes(filename, bytes);
+
+
+        Debug.Log(string.Format("Took screenshot to: {0}", filename));
+        //takeHiResShot = false;
+
+
+        // set texture of segmentation to newly screenshoted picture
+        Texture2D tex = null;
+        byte[] fileData;
+
+        if (File.Exists(filename))
         {
-            RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
-            GetComponent<Camera>().targetTexture = rt;
-            Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false);
-            GetComponent<Camera>().Render();
-            RenderTexture.active = rt;
-            screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
-            GetComponent<Camera>().targetTexture = null;
-            RenderTexture.active = null; // JC: added to avoid errors
-            Destroy(rt);
-            byte[] bytes = screenShot.EncodeToPNG();
-            string filename = ScreenShotName(resWidth, resHeight);
-            System.IO.File.WriteAllBytes(filename, bytes);
-
-
-
-            // make readable
-            /*string line;
-            try
-            {
-                //Pass the file path and file name to the StreamReader constructor
-                StreamReader sr = new StreamReader(filename + ".meta");
-                //Read the first line of text
-                line = sr.ReadLine();
-                //Continue to read until you reach end of file
-                int counter = 0;
-                int line_to_edit = 0;
-                while (line != null)
-                {
-                    //write the line to console window
-                    Debug.Log(line);
-                    if (line.Contains("  isReadable: 0")) {
-                        line_to_edit = counter;
-                    } // if
-                    //Read the next line
-                    line = sr.ReadLine();
-                    counter++;
-                }
-                //close the file
-                sr.Close();
-                Debug.Log("sleepy");
-                Thread.Sleep(new TimeSpan(0, 0, 1));
-                Debug.Log("awake");
-                string newText = "isReadable: 1";
-                string[] arrLine = File.ReadAllLines(filename + ".meta");
-                arrLine[line_to_edit - 1] = newText;
-                File.WriteAllLines(filename + ".meta", arrLine);
-            }
-            catch (Exception e)
-            {
-                Debug.Log("Exception: " + e.Message);
-            }
-            finally
-            {
-                Debug.Log("Executing finally block.");
-            }*/
-            
-         
-
-
-
-
-            Debug.Log(string.Format("Took screenshot to: {0}", filename));
-            takeHiResShot = false;
-
-
-            // set texture of segmentation to newly screenshoted picture
-            Texture2D tex = null;
-            byte[] fileData;
-
-            if (File.Exists(filename))
-            {
-                Debug.Log("exists");
-                fileData = File.ReadAllBytes(filename);
-                tex = new Texture2D(2, 2);
-                tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
-            }
-            else {
-                Debug.Log("nonexistant");
-            }
-            processor.texture = tex;
+            Debug.Log("exists");
+            fileData = File.ReadAllBytes(filename);
+            tex = new Texture2D(2, 2);
+            tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
         }
-    }
+        else
+        {
+            Debug.Log("nonexistant");
+        } // if-else
+        processor.texture = tex;
+
+        // show camera after screenshot
+        canvas.SetActive(true);
+
+        // add file path to Contours.txt after
+        try
+        {
+            //Pass the filepath and filename to the StreamWriter Constructor
+            StreamWriter sw = new StreamWriter("Assets/Contours/Filename.txt", false);
+            //Write a line of text
+            sw.WriteLine(filename);
+            sw.Close();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception: " + e.Message);
+        }
+        finally
+        {
+            Console.WriteLine("Executing finally block.");
+        } // try-catch-finally
+        // } // if
+    } // SaveScreenshot
 }
