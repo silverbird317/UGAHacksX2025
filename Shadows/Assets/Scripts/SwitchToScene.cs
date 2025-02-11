@@ -48,6 +48,14 @@ public class SwitchToScene : MonoBehaviour
             SceneManager.LoadScene("MainSceneTwo");
         }  else if (sceneName.Equals("MainSceneTwo")) {
             SceneManager.LoadScene("MainSceneThree");
-        } 
+        } else if (sceneName.Equals("MainSceneThree")) {
+            SceneManager.LoadScene("MainSceneFour");
+        } else if (sceneName.Equals("MainSceneFour")) {
+            SceneManager.LoadScene("MainSceneFive");
+        } /*else if (sceneName.Equals("MainSceneFive")) {
+            SceneManager.LoadScene("MainSceneSix");
+        } */else {
+             SceneManager.LoadScene("MainMenuScene");
+        }
     }
 }
