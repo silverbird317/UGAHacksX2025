@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System;
 using OpenCvSharp;
+using UnityEngine.UI;
 
 public class GenerateColliders : MonoBehaviour
 {
@@ -33,9 +34,9 @@ public class GenerateColliders : MonoBehaviour
                     rowCount++;
                     tempPointsList = new List<Vector2>();
                 } else {
-                    float scale = 100;
-                    float x = (float.Parse(line.Substring(line.IndexOf('x') + 2, line.IndexOf(' ') - (line.IndexOf('x') + 2))) / scale) - (960 / scale);
-                    float y = ((float.Parse(line.Substring(line.IndexOf('y') + 2, line.IndexOf(')') - (line.IndexOf('y') + 2))) / scale) * -1) + (540 / scale);
+                    double scale = 9.4;
+                    float x = (float)((float.Parse(line.Substring(line.IndexOf('x') + 2, line.IndexOf(' ') - (line.IndexOf('x') + 2))) / scale) - (960 / scale));
+                    float y = (float)(((float.Parse(line.Substring(line.IndexOf('y') + 2, line.IndexOf(')') - (line.IndexOf('y') + 2))) / scale) * -1) + (540 / scale));
                     tempPointsList.Add(new Vector2(x, y));
                 } // if-else
             } // while
@@ -48,7 +49,7 @@ public class GenerateColliders : MonoBehaviour
                 GameObject obj = new GameObject("GameObject " + i);
                 obj.AddComponent<PolygonCollider2D>();
                 //obj.AddComponent<SpriteRenderer>();
-                obj.transform.position = new Vector3(0, 0, 5);
+                obj.transform.position = new Vector3(0, 0, 90);
                 //obj.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("collider");
                 //obj.GetComponent<SpriteRenderer>().sortingOrder = 0;
                 obj.GetComponent<PolygonCollider2D>().points = colliderData[i].ToArray();
@@ -87,7 +88,7 @@ public class GenerateColliders : MonoBehaviour
         Sprite newSprite = Sprite.Create(texture, new UnityEngine.Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
 
         // Assign the new Sprite to the Sprite 
-        showShadowImage.GetComponent<SpriteRenderer>().sprite = newSprite;
+        showShadowImage.GetComponent<Image>().sprite = newSprite;
 
         //showShadowImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("screen_1920x1080_2025-02-08_21-35-52");
     } // Start
