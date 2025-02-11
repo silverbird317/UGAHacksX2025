@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 208863890}
   - component: {fileID: 208863889}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Level 2 Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 328351174}
   - component: {fileID: 328351173}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Levels Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 421665590}
   - component: {fileID: 421665589}
   m_Layer: 5
-  m_Name: Tutorial 1
+  m_Name: Tutorial 1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,7 +694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &459035122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 532173295}
   - component: {fileID: 532173294}
   m_Layer: 0
-  m_Name: Ground Colliders
+  m_Name: Player Boundary Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 547647854}
   - component: {fileID: 547647853}
   m_Layer: 5
-  m_Name: Level 3
+  m_Name: Level 3 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1150,7 +1150,7 @@ GameObject:
   - component: {fileID: 660472492}
   - component: {fileID: 660472491}
   m_Layer: 5
-  m_Name: Level 2 (1)
+  m_Name: Level 5 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 758915790}
   - component: {fileID: 758915789}
   m_Layer: 5
-  m_Name: Level 1 (1)
+  m_Name: Level 4 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1464,7 +1464,7 @@ GameObject:
   - component: {fileID: 783570671}
   - component: {fileID: 783570670}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Level 4 Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 861962509}
   - component: {fileID: 861962508}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Levels Title - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1766,7 +1766,7 @@ GameObject:
   - component: {fileID: 902031077}
   - component: {fileID: 902031076}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Close Popup - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2058,7 +2058,7 @@ GameObject:
   - component: {fileID: 1003806227}
   - component: {fileID: 1003806226}
   m_Layer: 5
-  m_Name: Options Button text
+  m_Name: Options Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,7 +2350,7 @@ GameObject:
   - component: {fileID: 1118320278}
   - component: {fileID: 1118320277}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Levels Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2484,7 +2484,7 @@ GameObject:
   - component: {fileID: 1153254513}
   - component: {fileID: 1153254512}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Level 1 Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2726,7 +2726,7 @@ GameObject:
   - component: {fileID: 1200708286}
   - component: {fileID: 1200708285}
   m_Layer: 5
-  m_Name: Level 1
+  m_Name: Level 1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2881,7 +2881,7 @@ GameObject:
   - component: {fileID: 1235511753}
   - component: {fileID: 1235511754}
   m_Layer: 0
-  m_Name: SwitchSceneController
+  m_Name: Switch Scene Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2926,7 +2926,7 @@ GameObject:
   - component: {fileID: 1238201878}
   - component: {fileID: 1238201877}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Level 3 Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3062,7 +3062,7 @@ GameObject:
   - component: {fileID: 1280997493}
   - component: {fileID: 1280997492}
   m_Layer: 5
-  m_Name: Tutorial 2
+  m_Name: Tutorial 2 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3218,7 +3218,7 @@ GameObject:
   - component: {fileID: 1338364871}
   - component: {fileID: 1338364870}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Levels Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3351,7 +3351,7 @@ GameObject:
   - component: {fileID: 1489433472}
   - component: {fileID: 1489433471}
   m_Layer: 0
-  m_Name: ToggleLevelMenuConrller
+  m_Name: Popup Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3369,7 +3369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ddf73ab4d736744915b9c003831ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelMenu: {fileID: 459035121}
+  obj: {fileID: 459035121}
 --- !u!4 &1489433472
 Transform:
   m_ObjectHideFlags: 0
@@ -3651,7 +3651,7 @@ GameObject:
   - component: {fileID: 1717754722}
   - component: {fileID: 1717754721}
   m_Layer: 5
-  m_Name: Level 2
+  m_Name: Level 2 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3809,7 +3809,7 @@ GameObject:
   - component: {fileID: 1719011586}
   - component: {fileID: 1719011585}
   m_Layer: 5
-  m_Name: Tutorial 3
+  m_Name: Tutorial 3 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3965,7 +3965,7 @@ GameObject:
   - component: {fileID: 1896610352}
   - component: {fileID: 1896610351}
   m_Layer: 5
-  m_Name: Play Button text
+  m_Name: Play Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4191,7 +4191,7 @@ GameObject:
   - component: {fileID: 1945205783}
   - component: {fileID: 1945205782}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Levels Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4394,7 +4394,7 @@ GameObject:
   - component: {fileID: 2008827079}
   - component: {fileID: 2008827078}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Close Popup Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4538,7 +4538,7 @@ GameObject:
   - component: {fileID: 2009062304}
   - component: {fileID: 2009062303}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Level 6 Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4672,7 +4672,7 @@ GameObject:
   - component: {fileID: 2104199282}
   - component: {fileID: 2104199281}
   m_Layer: 5
-  m_Name: Menu Background Image
+  m_Name: Menu Background - image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4749,7 +4749,7 @@ GameObject:
   - component: {fileID: 2124395166}
   - component: {fileID: 2124395165}
   m_Layer: 5
-  m_Name: Level 3 (1)
+  m_Name: Level 6 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4905,7 +4905,7 @@ GameObject:
   - component: {fileID: 2126796455}
   - component: {fileID: 2126796454}
   m_Layer: 5
-  m_Name: Levels Button text
+  m_Name: Level 5 Button - text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5194,7 +5194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 898442256043741365}
   m_Layer: 5
-  m_Name: head-check
+  m_Name: Head Check - object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5341,7 +5341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8116524329269026897}
   m_Layer: 5
-  m_Name: ground-check
+  m_Name: Ground Check - object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
