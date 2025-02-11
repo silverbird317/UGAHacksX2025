@@ -17,9 +17,6 @@ namespace ImageProcessing
         // Use this for initialization
         public void GetContours()
         {
-            //slice |= Input.GetKeyDown("q");
-
-            //if (slice) {
             //Load texture
             Mat image = Unity.TextureToMat(this.texture);
 
