@@ -103,7 +103,7 @@ namespace ImageProcessing
             try
             {
                 //Pass the filepath and filename to the StreamWriter Constructor
-                StreamWriter sw = new StreamWriter("Assets/Contours/Contours.txt", false);
+                StreamWriter sw = new StreamWriter("Assets/TXT Files/Contours.txt", false);
                 //Write a line of text
                 for (int i = 0; i < simplify_contours.Length; i++)
                 {
@@ -116,7 +116,7 @@ namespace ImageProcessing
                   //Close the file
                 sw.Close();
 
-                StreamWriter sw2 = new StreamWriter("Assets/Contours/RetrySceneName.txt", false);
+                StreamWriter sw2 = new StreamWriter("Assets/TXT Files/RetrySceneName.txt", false);
                 sw2.WriteLine(SceneManager.GetActiveScene().name);
                 sw2.Close();
             }
@@ -130,7 +130,7 @@ namespace ImageProcessing
             } // try-catch-finally
 
             // after image segmentation, go to 2D trial scene
-            SceneManager.LoadScene("Shadow2DScene");
+            SceneManager.LoadScene("Shadows2D Scene");
 
             // } // if
 

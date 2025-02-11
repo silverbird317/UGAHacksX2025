@@ -5,8 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SwitchToScene : MonoBehaviour {
-    string filenamePath = "Assets/Contours/RetrySceneName.txt";
+    string filenamePath = "Assets/TXT Files/RetrySceneName.txt";
     string sceneName = "";
+
+    string sceneNameListPath = "Assets/TXT Files/SceneNamesList.txt";
 
     /*
      * switch scene to the a specific scene
@@ -14,8 +16,8 @@ public class SwitchToScene : MonoBehaviour {
      * parameters: string sceneName
      * returns: n/a
      */
-    public void SwitchScene(string sceneName) {
-        SceneManager.LoadScene(sceneName);
+    public void SwitchScene(string name) {
+        SceneManager.LoadScene(name);
     } // SwitchScene
 
     /*
@@ -25,7 +27,7 @@ public class SwitchToScene : MonoBehaviour {
      * returns: n/a
      */
     public void RetryLevel() {
-        // get filename from RetrySceneName.txt file
+        // get scenename from RetrySceneName.txt file
         using (StreamReader read = new StreamReader(filenamePath)) {
             string line;
             // loop through txt file
@@ -56,6 +58,72 @@ public class SwitchToScene : MonoBehaviour {
      * returns: n/a
      */
     public void Next() {
+        // get scenename from RetrySceneName.txt file
+        using (StreamReader read = new StreamReader(filenamePath)) {
+            string line;
+            // loop through txt file
+            while ((line = read.ReadLine()) != null) {
+                sceneName = line;
+            } // while
+        } // using
+        Debug.Log(sceneName);
+        char sceneType = sceneName[0];
+        int sceneNumber = 0;
+        bool convertNum = false;
+        convertNum = int.TryParse(sceneName.Substring(1, 5), out sceneNumber);
+
+        // get all scene names from SceneNamesList.txt file
+        Dictionary<int, string> tutorialLevels = new Dictionary<int, string>();
+        Dictionary<int, string> levels = new Dictionary<int, string>();
+        int tutorialMaxKey = 0;
+        int levelMaxKey = 0;
+        using (StreamReader read = new StreamReader(sceneNameListPath)) {
+            string line;
+            // loop through txt file
+            while ((line = read.ReadLine()) != null) {
+                string levelNum = line.Substring(1, 5);
+                bool isConvertible = false;
+                int nameAsInt = 0;
+                isConvertible = int.TryParse(levelNum, out nameAsInt);
+                if (line[0] == 'T') {
+                    tutorialLevels.Add(nameAsInt, line);
+                    if (nameAsInt > tutorialMaxKey) {
+                        tutorialMaxKey = nameAsInt;
+                    } // if
+                }
+                else if (line[0] == 'L') {
+                    levels.Add(nameAsInt, line);
+                    if (nameAsInt > levelMaxKey) {
+                        levelMaxKey = nameAsInt;
+                    } // if
+                } // if-else
+            } // while
+        } // using
+
+        Debug.Log("tutorial Max: " + tutorialMaxKey);
+        Debug.Log("level Max: " + levelMaxKey);
+        Debug.Log("current scene num: " + sceneNumber);
+        Debug.Log("current scene type: " + sceneType);
+
+        string nextLevel = " ";
+        if (sceneType == 'T') {
+            if (sceneNumber == tutorialMaxKey) {
+                nextLevel = "L00001";
+            } else {
+                nextLevel = "T" + (sceneNumber + 1).ToString("D5");
+            } // if-else
+        } else if (sceneType == 'L') {
+            if (sceneNumber == levelMaxKey) {
+                nextLevel = "Title Screen";
+            } else {
+                nextLevel = "L" + (sceneNumber + 1).ToString("D5");
+            } // if-else
+        } // if-else
+
+        Debug.Log("next level: " + nextLevel);
+        SceneManager.LoadScene(nextLevel);
+
+        /*
         if (sceneName.Equals("TutorialLevelOne")) {
             SceneManager.LoadScene("TutorialLevelTwo");
         } else if (sceneName.Equals("TutorialLevelTwo")) {
@@ -71,5 +139,6 @@ public class SwitchToScene : MonoBehaviour {
         } else {
              SceneManager.LoadScene("MainMenuScene");
         } // if-else
+        */
     } // Next
 } // SwitchToScene

@@ -82,7 +82,7 @@ public class TakeScreenshot : MonoBehaviour
         try
         {
             //Pass the filepath and filename to the StreamWriter Constructor
-            StreamWriter sw = new StreamWriter("Assets/Contours/Filename.txt", false);
+            StreamWriter sw = new StreamWriter("Assets/TXT Files/Filename.txt", false);
             //Write a line of text
             sw.WriteLine(filename);
             sw.Close();

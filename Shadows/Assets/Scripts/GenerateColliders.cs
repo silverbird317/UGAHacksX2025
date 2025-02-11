@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class GenerateColliders : MonoBehaviour
 {
     List<List<Vector2>> colliderData = new List<List<Vector2>>();
-    string colliderDataPath = "Assets/Contours/Contours.txt";
-    string filenamePath = "Assets/Contours/Filename.txt";
+    string colliderDataPath = "Assets/TXT Files/Contours.txt";
+    string filenamePath = "Assets/TXT Files/Filename.txt";
 
     [SerializeField] GameObject showShadowImage;
 
