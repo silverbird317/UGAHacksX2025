@@ -1,2 +1,9 @@
 TO DO: 
+-make play button go to the level that was last played
+-make options menu
+-make prefabs for ui popups
+-set 2d level to correct sizing
+
+
+FINISHED:
 fix gameobject many hundreds
